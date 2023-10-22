@@ -7,6 +7,8 @@ def _remove_html_tags(html: str) -> list[str]:
         'style',
         'script',
         'img',
+        '[document]',
+        'meta'
     ]
     soup = BeautifulSoup(html, 'html.parser')
 
