@@ -8,6 +8,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.body {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /* Style the top navigation bar */
 .header {
     overflow: hidden;
@@ -70,6 +75,21 @@ body {
 .submit {
     width: 100px;
     font-size: medium;
+}
+
+.statement {
+    border: 1px solid #b69cc7;
+    margin-top: 20px;
+    margin-left: 40px;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    background-color: #f8f1c9;
+    border-radius: 10px;
+}
+
+.candidate {
+    font-weight: bolder;
+    font-size: larger;
 }
 
 .lds-roller {

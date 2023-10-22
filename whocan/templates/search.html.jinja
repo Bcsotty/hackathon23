@@ -1,16 +1,16 @@
 {% extends "home.html.jinja" %}
 {% block body %}
     {% for cand, resp in results.items() %}
-        <div>
-            <p>
+        <div class="statement">
+            <p class="candidate">
                 {{ cand }}
             </p>
-            <p>
+            <p class="prompt">
                 They said: {{ resp }}
             </p>
         </div>
     {% else %}
-        <p>
+        <p style="margin: 40px 50px 50px 60px">
             No candidates in district!
         </p>
     {% endfor %}
