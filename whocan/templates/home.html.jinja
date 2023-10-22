@@ -20,7 +20,7 @@
 
     <div class="content">
         <h2>Type in your search criteria: &ensp; &ensp;</h2>
-        <form action="/search" method="post">
+        <form action="/search" method="post" onsubmit="revealRoller()">
             <p>
                 <label for="district">voting district:</label>
                 <input type="number" placeholder="1" value="{{ district or 1 }}" required name="district" min="1"
@@ -29,6 +29,16 @@
                        name="issue">
                 <input class="submit" type="submit" value="Submit">
             </p>
+            <div class="lds-roller" id="roller">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+            </div>
             <p><b>Examples:</b> prison reform, reducing the effects of homelessness in minority communities, race, union
                 jobs, etc.</p>
         </form>
@@ -38,7 +48,13 @@
     {% endblock %}
 
     <div class="footer">
-        <p>Created by Andy Ealovega, Bretty Csotty, and Jadyn Smith from the University of Michigan-Dearborn</p>
+        <p>Created by Andy Ealovega, Brett Csotty, and Jadyn Smith from the University of Michigan-Dearborn</p>
     </div>
+</div>
 </body>
+<script>
+    function revealRoller() {
+        document.getElementById("roller").classList.remove("hidden");
+    }
+</script>
 </html>
