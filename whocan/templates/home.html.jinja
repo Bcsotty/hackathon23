@@ -9,12 +9,16 @@
 </head>
 <body>
 
-<div class="header">
-    <div class="logo">
-        <img src="static/LogoHackathon1.jpg" alt="WHOCAN Logo" width="100" height="100">
-        <span class="title"><b>WHOCAN</b></span>
-        <div class="schpeil">
-            <span>Lets identify <b>who can</b> pass legislation on policies that matter most.</span>
+<div class="body">
+    <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src="static/LogoHackathon1.png" alt="WHOCAN Logo" width="100" height="100">
+            </a>
+            <span class="title"><b>WHOCAN</b></span>
+            <div class="schpeil">
+                <span>Lets identify <b>who can</b> pass legislation on policies that matter most.</span>
+            </div>
         </div>
     </div>
 
@@ -22,7 +26,7 @@
         <h2>Type in your search criteria: &ensp; &ensp;</h2>
         <form action="/search" method="post">
             <p>
-                <label for="district">voting district:</label>
+                <label for="district">Voting district:</label>
                 <input type="number" placeholder="1" value="{{ district or 1 }}" required name="district" min="1"
                        max="38">
                 <input class="searchbar" type="text" placeholder="Issue" value="{{ issue or "homelessness" }}" required
@@ -38,7 +42,7 @@
     {% endblock %}
 
     <div class="footer">
-        <p>Created by Andy Ealovega, Bretty Csotty, and Jadyn Smith from the University of Michigan-Dearborn</p>
+        <p>Created by Andrew Ealovega, Brett Csotty, and Jadyn Smith from the University of Michigan-Dearborn</p>
     </div>
 </body>
 </html>
