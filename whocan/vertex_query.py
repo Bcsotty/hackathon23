@@ -4,6 +4,7 @@ import constants
 
 vertexai.init(project=constants.PROJECT, location="us-central1")
 
+
 def query_ai(interested_policy: str, politician_name: str, website_text: str):
     parameters = {
         "max_output_tokens": 1024,
@@ -25,5 +26,5 @@ def query_ai(interested_policy: str, politician_name: str, website_text: str):
     '''
 
     response = model.predict(prompt, **parameters)
-    
+
     return response.text

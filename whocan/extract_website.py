@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
+
 def _remove_html_tags(html: str) -> list[str]:
     blocklist = [
         'style',
@@ -12,6 +13,7 @@ def _remove_html_tags(html: str) -> list[str]:
     text = [t.strip() for t in soup.find_all(string=True) if t.parent.name not in blocklist and t.strip() != '']
 
     return text
+
 
 def _download_html(url: str) -> str | None:
     try:
@@ -29,13 +31,15 @@ def _download_html(url: str) -> str | None:
     except requests.exceptions.RequestException as e:
         print(f"An error occured: {e}")
         return None
-    
+
+
 def extract_website_text(url: str) -> list[str] | None:
     html_content = _download_html(url)
     if html_content:
         text = _remove_html_tags(html_content)
 
         return text
+
 
 if __name__ == "__main__":
     website_url = input("Enter the website URL: ")
