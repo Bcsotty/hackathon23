@@ -20,11 +20,13 @@
 
     <div class="content">
         <h2>Type in your search criteria: &ensp; &ensp;</h2>
-        <form action="/search" target="_blank" method="post">
+        <form action="/search" method="post">
             <p>
                 <label for="district">voting district:</label>
-                <input type="number" placeholder="1" required name="district" min="1" max="38">
-                <input class="searchbar" type="text" placeholder="Issue" required name="issue">
+                <input type="number" placeholder="1" value="{{ district or 1 }}" required name="district" min="1"
+                       max="38">
+                <input class="searchbar" type="text" placeholder="Issue" value="{{ issue or "homelessness" }}" required
+                       name="issue">
                 <input class="submit" type="submit" value="Submit">
             </p>
             <p><b>Examples:</b> prison reform, reducing the effects of homelessness in minority communities, race, union

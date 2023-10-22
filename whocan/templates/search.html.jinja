@@ -1,4 +1,18 @@
 {% extends "home.html.jinja" %}
 {% block body %}
-    <p>hi!</p>
+    {% for cand, resp in results.items() %}
+        <div>
+            <p>
+                {{ cand }}
+            </p>
+            <p>
+                They said: {{ resp }}
+            </p>
+        </div>
+    {% else %}
+        <p>
+            No candidates in district!
+        </p>
+    {% endfor %}
+
 {% endblock %}

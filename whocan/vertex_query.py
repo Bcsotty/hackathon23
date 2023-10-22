@@ -1,10 +1,12 @@
 import vertexai
 from vertexai.preview.language_models import TextGenerationModel
 from .constants import PROJECT
+from functools import cache
 
 vertexai.init(project=PROJECT, location="us-central1")
 
 
+@cache
 def query_ai(interested_policy: str, politician_name: str, website_text: str):
     parameters = {
         "max_output_tokens": 1024,
@@ -17,7 +19,8 @@ def query_ai(interested_policy: str, politician_name: str, website_text: str):
 
     prompt = f'''
     Given the following text scraped from the politicians website,
-    give a summary of the politicians view on the specified topic/policy. 
+    give a summary of the politicians view on the specified topic/policy.
+    Only summarise this specific policy. 
     
     Relevant Policy: {interested_policy}.
     Politicians Name: {politician_name}.

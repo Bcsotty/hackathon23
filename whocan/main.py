@@ -43,6 +43,9 @@ async def search(request: Request, issue: Annotated[str, Form()], district: Anno
     # Exec query on all sites
     for cand, site in res:
         prompt_res = query_ai(issue, cand.name, site.site)
-        results[cand.name] = prompt_res
+        results[
+            cand.name] = prompt_res if len(
+            prompt_res.strip()) > 2 else "The candidate does not have any statements on this subject."
 
-    return templates.TemplateResponse("search.html.jinja", {"request": request, "results": results})
+    return templates.TemplateResponse("search.html.jinja",
+                                      {"request": request, "results": results, "district": district, "issue": issue})
