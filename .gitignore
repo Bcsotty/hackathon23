@@ -2,3 +2,4 @@ venv
 constants.py
 test.py
 __pycache__
+candidates.csv
