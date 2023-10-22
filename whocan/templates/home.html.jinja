@@ -1,3 +1,104 @@
-<p>
-    Hello world!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 2%;
+  margin-left: 1%;
+}
+
+/* Style the top navigation bar */
+.header {
+  padding-block: 2%;
+  padding-left: 1%;
+  padding-block-end: 2%;
+  overflow: hidden;
+  height: 10%;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  text-indent: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: x-large;
+}
+
+/* Style the content */
+.content {
+  background-color: #B79DC8;
+  padding-block: 2%;
+  padding-left: 3%;
+  padding-right: 5%;
+  height: 300px;
+  border-radius: 20px;
+ }
+
+/* Style the footer */
+.footer {
+  background-color: white;
+  padding: 10px;
+}
+
+@media screen and (max-width: 810px) {
+    .schpeil {
+      display: none;
+    }
+  }
+
+  .searchbar {
+    width: 50%;
+    font-size: medium;
+  }
+
+  .submit {
+    width: 100px;
+    font-size: medium;
+  }
+
+</style>
+
+
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <img src="static/LogoHackathon1.jpg" alt="WHOCAN Logo" width="100" height="100">
+    <span class="title"><b>WHOCAN</b></span>
+      <div class="schpeil">
+        <span>Lets identify <b>who can</b> pass legislation on policies that matter most.</span>
+      </div>
+  </div>
+
+<div class="content">
+  <h2>Type in your search criteria: &ensp; &ensp;</h2>
+  <form action="/action_page.php" target="_blank">
+    <p>
+      <input class="searchbar" type="text" placeholder="Issue" required name="Issue">     
+      <input class="submit" type="submit" value="Submit">
+    </p>
+  <p><b>Examples:</b> prison reform, reducing the effects of homelessness in minority communities, race, union jobs, etc.</p>
+</div>
+
+<div class="footer">
+  <p>Created by Andy Ealovega, Bretty Csotty, and Jadyn Smith from the University of Michigan-Dearborn</p>
+</div>
+
+</body>
+</html>
