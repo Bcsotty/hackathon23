@@ -1,8 +1,8 @@
 import vertexai
 from vertexai.preview.language_models import TextGenerationModel
-import constants
+from .constants import PROJECT
 
-vertexai.init(project=constants.PROJECT, location="us-central1")
+vertexai.init(project=PROJECT, location="us-central1")
 
 
 def query_ai(interested_policy: str, politician_name: str, website_text: str):
