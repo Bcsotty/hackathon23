@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/style.css">
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/style.css">
 
 </head>
 <body>
@@ -20,9 +20,11 @@
 
     <div class="content">
         <h2>Type in your search criteria: &ensp; &ensp;</h2>
-        <form action="" target="_blank">
+        <form action="/search" target="_blank" method="post">
             <p>
-                <input class="searchbar" type="text" placeholder="Issue" required name="Issue">
+                <label for="district">voting district:</label>
+                <input type="number" placeholder="1" required name="district" min="1" max="38">
+                <input class="searchbar" type="text" placeholder="Issue" required name="issue">
                 <input class="submit" type="submit" value="Submit">
             </p>
             <p><b>Examples:</b> prison reform, reducing the effects of homelessness in minority communities, race, union
@@ -30,9 +32,11 @@
         </form>
     </div>
 
+    {% block body %}
+    {% endblock %}
+
     <div class="footer">
         <p>Created by Andy Ealovega, Bretty Csotty, and Jadyn Smith from the University of Michigan-Dearborn</p>
     </div>
-
 </body>
 </html>
