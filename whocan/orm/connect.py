@@ -2,7 +2,7 @@ from sqlmodel import create_engine, SQLModel, Session, select
 # Required to create tables
 from .model import *
 import csv
-from ..extract_website import extract_website_text
+from .extract_website import extract_website_text
 
 sqlite_file_name = "db.sqlite"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
